@@ -77,11 +77,24 @@
 			(4).交给store的是总reducer，最后注意在组件中取出状态的时候，记得“取到位”。
 
 ## 7.求和案例_react-redux开发者工具的使用
-			(1).yarn add redux-devtools-extension
-			(2).store中进行配置
-					import {composeWithDevTools} from 'redux-devtools-extension'
-					const store = createStore(allReducer,composeWithDevTools(applyMiddleware(thunk)))
+
+参考网站
+https://github.com/zalmoxisus/redux-devtools-extension#usage
+
+			(1) npm install --save redux-devtools-extension
+			(2) store.jsx 中配置
+			
+           1.  import { composeWithDevTools } from 'redux-devtools-extension';
+            
+           2.  const store = createStore(reducer, composeWithDevTools(
+                applyMiddleware(middleware),
+               ));
 
 ## 8.求和案例_react-redux最终版
 			(1).所有变量名字要规范，尽量触发对象的简写形式。
 			(2).reducers文件夹中，编写index.js专门用于汇总并暴露所有的reducer
+
+## 9.打包
+            打包  npm run build
+            安装临时服务器 npm i serve -g
+            开启临时服务器 serve build , 在build文件夹开启服务器
